@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+.leaderboard-container {
+    width: 450px;
+    background: url('leaderboard-bg.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional Overlay */
+.leaderboard-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Darkens background for readability */
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.tabs,
+.leaderboard {
+    position: relative;
+    z-index: 2; /* Keeps content above the overlay */
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f2645a;
+    border-radius: 10px 10px 0 0;
+    color: white;
+}
+
+.tab {
+    cursor: pointer;
+}
+
+.tab.active {
+    font-weight: bold;
+}
+
+.leaderboard {
+    padding: 20px 0;
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Adds spacing between entries */
+}
+
+/* Profile Image Styling */
+.entry img {
+    width: 50px; /* Size of profile image */
+    height: 50px; /* Ensures image is square */
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 15px; /* Space between image and text */
+    border: 2px solid #ffcc00; /* Adds a border to profile images */
+}
+
+/* Profile Name Styling */
+.name {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Points Styling */
+.points {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Progress Bar */
+.progress {
+    width: 50%;
+    background-color: #e0e0e0;
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+    position: relative;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffcc00, #f2645a);
+    width: 0; /* Start with 0 width for animation */
+    transition: width 0.1s ease-in-out;
+}
+
+.link-button {
+    pointer-events: auto; /* Ensures the button is clickable */
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+    background-color: #45a049;
+}
+
